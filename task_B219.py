@@ -12,7 +12,27 @@ import traceback
 def century(year):
     # Тело функции
     a = int(year)
-    b= str(int(a/100) + 1) + 'st'
+    b= int(a/100) + 1
+    if b < 10:
+      if b == 1:
+        b = str(b) + 'st'
+      elif b == 2:
+        b = str(b) + 'nd'
+      elif b == 3:
+        b = str(b) + 'rd'
+      else:
+        b = str(b) + 'th'
+    elif b >= 10 and b < 20:
+      b = str(b) + 'th'
+    elif b >= 20:
+      if b % 10 == 1:
+        b = str(b) + 'st'
+      elif b % 10 == 2:
+        b = str(b) + 'nd'
+      elif b % 10 == 3:
+        b = str(b) + 'rd'
+      else:
+        b = str(b) + 'th'
     return b
 
 
