@@ -24,4 +24,8 @@ class Cafe:
         a = '\n'.join([f'{str(waiter)}\n{str(waiter.receipt)}' for waiter in self.waiter])
         b = '\n'.join([f'{str(cook)}\n{str(cook.dishes)}' for cook in self.cook])
         return f"Name: {self.name}\nAddres: {self.address}\nWaiter :\n{a}\nCook :\n{b}\n"
-            
+
+    def create_txt(self, filename): 
+      f = open(filename, 'w') 
+      f.write(self.__str__()) 
+      f.close()        
